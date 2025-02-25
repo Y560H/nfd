@@ -36,4 +36,5 @@ No Fraud / Node Forward Bot
 - 提供额外欺诈信息时，需要提供一定的消息出处
 
 ## Thanks
+- [LloydAsp/nfd](https://github.com/LloydAsp/nfd)
 - [telegram-bot-cloudflare](https://github.com/cvzi/telegram-bot-cloudflare)
