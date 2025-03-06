@@ -116,16 +116,25 @@ async function onMessage (message) {
     if(/^\/[\u5C01\u7981]$/.exec(message.text)){
       return handleBlock(message)
     }
+    if(/^\/封禁$/.exec(message.text)){
+      return handleBlock(message)
+    }
     if(/^\/unblock$/.exec(message.text)){
       return handleUnBlock(message)
     }
     if(/^\/[\u89E3\u5C01]$/.exec(message.text)){
       return handleUnBlock(message)
     }
+    if(/^\/解封$/.exec(message.text)){
+      return handleUnBlock(message)
+    }
     if(/^\/checkblock$/.exec(message.text)){
       return checkBlock(message)
     }
     if(/^\/[\67E5]$/.exec(message.text)){
+      return checkBlock(message)
+    }
+    if(/^\/查$/.exec(message.text)){
       return checkBlock(message)
     }
     let guestChantId = await nfd.get('msg-map-' + message?.reply_to_message.message_id,
@@ -146,7 +155,7 @@ async function handleGuestMessage(message){
   if(isblocked){
     return sendMessage({
       chat_id: chatId,
-      text:'Your are blocked \n 你已被封禁'
+      text:'你已被封禁(Your are blocked). '
     })
   }
 
